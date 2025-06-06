@@ -44,19 +44,19 @@ go run main.go input.png output.go
 Convert the included gopher.png to a Go byte array:
 
 ```bash
-go run main.go gopher.png gopher_bytes.go
+go run main.go input.png output.go
 ```
 
-This will generate a file named `gopher_bytes.go` containing:
+This will generate a file named `output.go` containing:
 
 ```go
 package main
 
-// GopherBytesWidth and GopherBytesHeight define image dimensions
-const GopherBytesWidth = 296
-const GopherBytesHeight = 128
+// OutputWidth and OutputHeight define image dimensions
+const OutputWidth = 296
+const OutputHeight = 128
 
-var GopherBytes = []byte{
+var Output = []byte{
     // Byte array data representing the image
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
     // ... more bytes ...
