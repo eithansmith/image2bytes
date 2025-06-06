@@ -33,7 +33,7 @@ go get github.com/yourusername/image2bytes
 
 ```bash
 # Basic usage
-go run main.go input.png output.go
+go run . input.png output.go
 
 # Or if you've built the binary
 ./image2bytes input.png output.go
@@ -44,7 +44,7 @@ go run main.go input.png output.go
 Convert the included gopher.png to a Go byte array:
 
 ```bash
-go run main.go input.png output.go
+go run . input.png output.go
 ```
 
 This will generate a file named `output.go` containing:
@@ -82,6 +82,30 @@ var Output = []byte{
 ## Requirements
 
 - Go 1.24 or later
+
+## Testing
+
+The project includes a comprehensive test suite to ensure functionality and reliability. The tests cover:
+
+- String processing functions (titleCase)
+- File validation functions (isPNGFile, isGoFile)
+- Image processing logic (processImage)
+- File generation logic (generateGoFile)
+
+### Running Tests
+
+To run the tests:
+
+```bash
+# Run all tests
+go test
+
+# Run tests with verbose output
+go test -v
+
+# Run tests with coverage report
+go test -cover
+```
 
 ## License
 
