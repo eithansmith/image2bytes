@@ -16,6 +16,7 @@
 # Go specific
 *.test
 *.out
+*.html
 /vendor/
 /Godeps/
 
