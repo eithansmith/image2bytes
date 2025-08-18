@@ -14,7 +14,7 @@ A utility that converts PNG images to byte arrays for embedding in Go code. It p
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/image2bytes.git
+git clone https://github.com/eithansmith/image2bytes.git
 
 # Navigate to the project directory
 cd image2bytes
@@ -26,7 +26,7 @@ go build
 Alternatively, you can install directly using `go get`:
 
 ```bash
-go get github.com/yourusername/image2bytes
+go get github.com/eithansmith/image2bytes
 ```
 
 ## Usage
