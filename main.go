@@ -14,15 +14,15 @@ import (
 // main is the entry point of the program. It processes command-line arguments,
 // reads the input PNG file, converts it to a byte array, and writes the result to a Go file.
 func main() {
-	// Check if the required command-line arguments are provided
-	if len(os.Args) < 3 {
-		fmt.Println("Usage: go run . input.png output.go")
-		return
-	}
+	inputPath := "input.png"
+	outputPath := "output.go"
 
-	// Extract input and output file paths from command-line arguments
-	inputPath := os.Args[1]
-	outputPath := os.Args[2]
+	// Check if the required command-line arguments are provided
+	if len(os.Args) >= 3 {
+		// Extract input and output file paths from command-line arguments
+		inputPath = os.Args[1]
+		outputPath = os.Args[2]
+	}
 
 	// Validate that inputPath is a PNG file
 	if !isPNGFile(inputPath) {
@@ -59,7 +59,11 @@ func main() {
 	}
 
 	// Process the image
-	data, width, height := processImage(img)
+	data, width, height, err := processImage(img)
+	if err != nil {
+		panic(err)
+	}
+
 	fmt.Printf("Image dimensions: %dx%d\n", width, height)
 
 	// Generate the output Go file
