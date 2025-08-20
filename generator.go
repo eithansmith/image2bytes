@@ -23,12 +23,8 @@ func generateGoFile(outputPath string, varName string, data []byte, width, heigh
 	// Write the Go code to the output file
 	// Start with the package declaration
 	_, _ = fmt.Fprintf(outFile, "package main\n\n")
-	// Add constants for the image dimensions
-	_, _ = fmt.Fprintf(outFile, "// %sWidth and %sHeight define image dimensions\n", varName, varName)
-	_, _ = fmt.Fprintf(outFile, "const %sWidth = %d\n", varName, width)
-	_, _ = fmt.Fprintf(outFile, "const %sHeight = %d\n\n", varName, height)
 	// Begin the byte array declaration
-	_, _ = fmt.Fprintf(outFile, "var %s = []byte{\n", varName)
+	_, _ = fmt.Fprintf(outFile, "var %s = []byte{", varName)
 	// Write the byte array data in a formatted way (12 bytes per line)
 	for i, b := range data {
 		if i%12 == 0 {

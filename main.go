@@ -11,19 +11,14 @@ import (
 	"strings"
 )
 
+const (
+	inputPath  = "input.png"
+	outputPath = "output.go"
+)
+
 // main is the entry point of the program. It processes command-line arguments,
 // reads the input PNG file, converts it to a byte array, and writes the result to a Go file.
 func main() {
-	inputPath := "input.png"
-	outputPath := "output.go"
-
-	// Check if the required command-line arguments are provided
-	if len(os.Args) >= 3 {
-		// Extract input and output file paths from command-line arguments
-		inputPath = os.Args[1]
-		outputPath = os.Args[2]
-	}
-
 	// Validate that inputPath is a PNG file
 	if !isPNGFile(inputPath) {
 		fmt.Println("Error: Input file must be a PNG file (with .png extension)")

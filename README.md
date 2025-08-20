@@ -33,10 +33,10 @@ go get github.com/eithansmith/image2bytes
 
 ```bash
 # Basic usage
-go run . input.png output.go
+go run
 
 # Or if you've built the binary
-./image2bytes input.png output.go
+./image2bytes
 ```
 
 ### Example
@@ -44,17 +44,13 @@ go run . input.png output.go
 Convert the included gopher.png to a Go byte array:
 
 ```bash
-go run . input.png output.go
+go run
 ```
 
 This will generate a file named `output.go` containing:
 
 ```go
 package main
-
-// OutputWidth and OutputHeight define image dimensions
-const OutputWidth = 296
-const OutputHeight = 128
 
 var Output = []byte{
     // Byte array data representing the image
